@@ -1,0 +1,5 @@
+ice_cream.settings_form:
+  title: 'Ice cream block settings'
+  parent: system.admin_config_ui
+  description: 'Config for Ice cream selling limits'
+  route_name: ice_cream.settings_form

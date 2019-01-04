@@ -1,0 +1,10 @@
+<?php
+
+function ice_cream_theme($existing, $type, $theme, $path)
+{
+    return [
+        'ice_cream' => [
+            'render element' => 'form'
+        ]
+    ];
+}

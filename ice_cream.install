@@ -1,0 +1,45 @@
+<?php
+
+function ice_cream_schema() {
+    $schema['orders'] = [
+        'fields' => [
+            'id' => [
+                'type' => 'serial',
+                'unsigned' => TRUE,
+                'not null' => TRUE,
+            ],
+            'type' => [
+                'type' => 'varchar',
+                'length' => 32,
+                'not null' => TRUE,
+                'default' => '',
+            ],
+            'flavour' => [
+                'type' => 'varchar',
+                'length' => 32,
+                'not null' => FALSE,
+                'default' => '',
+            ],
+            'topping' => [
+                'type' => 'varchar',
+                'length' => 32,
+                'not null' => FALSE,
+                'default' => '',
+            ],
+            'time_clicked' => [
+                'type' => 'int',
+                'not null' => TRUE,
+                'default' => 0,
+            ],
+        ],
+        'primary key' => ['id'],
+    ];
+    return $schema;
+}
+
+function ice_cream_update_8000() {
+    $table = ice_cream_schema();
+    \Drupal::database()
+        ->schema()
+        ->createTable('orders', $table['orders']);
+}

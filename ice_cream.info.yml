@@ -1,0 +1,5 @@
+type: module
+name: IceCreamModule
+description: 'A module to add ice cream vending form to your Drupal installation'
+package: Thomas More
+core: 8.x
